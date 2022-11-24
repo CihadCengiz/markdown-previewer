@@ -11,8 +11,8 @@ function App() {
   return (
     <Container
       style={{
-        backgroundColor: '#555',
-        color: '#FFF',
+        backgroundColor: '#87b5b5',
+        color: '#333',
         height: 'auto',
         minHeight: "100vh"
       }}
@@ -21,18 +21,20 @@ function App() {
       <div className='d-flex justify-content-center pt-3' id='text-area-wrapper'>
         <div className='border-top'>
           <div
-            style={{ width: '60vh' }}
-            className='d-flex justify-content-start border-start border-end'
+            style={{ width: '60vh', background: "#4aa3a3", fontWeight:"800", paddingLeft: "10px", height:"3vh" }}
+            className='d-flex justify-content-start align-items-center border-start border-end'
             id='toolbar'
           >
-            Editor
+            <p className="mb-0 align-items-center d-flex" style={{fontSize: "18px"}}>
+            <i className="fa fa-free-code-camp fa-2x" />&nbsp;Editor
+            </p>
           </div>
             <textarea
               id='text-area'
               className='border-start border-end border-bottom'
               title='Rembrandt van Rijn'
               name='w3review'
-              style={{ minHeight: "25vh", width: '60vh', outline: 'none' }}
+              style={{ minHeight: "25vh", width: '60vh', outline: 'none', background:"#c0d8d8" }}
               defaultValue={defValue}
               onChange={(e) => setText(e.target.value)}
             />
@@ -40,7 +42,7 @@ function App() {
       </div>
 
       <div id='preview-area-wrapper' className='d-flex justify-content-center'>
-         <MDEditor className="border" preview='preview' height="70vh" visibleDragbar={false} enableScroll={true} value={text} style={{ whiteSpace: 'pre-wrap', width:"100vh" }} />
+         <MDEditor className="border" preview='preview' height="70vh" visibleDragbar={false} enableScroll={true} value={text} style={{ width:"100vh" }} />
       </div>
     </Container>
   );
